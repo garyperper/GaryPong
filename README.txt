@@ -10,4 +10,4 @@ Ce jeu se joue à deux joueurs, le J1 utilise sa raquette gauche avec z pour mon
 Le J2 utilise lui les flèches du haut et du bas pour monter et descendre
 
 A chaque rebond sur la raquette, la vitesse augmente de 0.4 et se reset dès que qqn gagne un point (la vitesse augmente pas sur les murs)
-C'est un BO7 (donc 5 pts gagnants)
+C'est un BO9 (donc 5 pts gagnants)
