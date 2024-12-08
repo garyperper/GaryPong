@@ -1,15 +1,20 @@
-import pygame
 from PIL import Image
 
 class Raquette:
     
-    def __init__(self,nomImage,x,dimfen) :
+    def __init__(self,nomImage:str,joueur:int,dimfen:tuple,vitesse:int) :
         self.__nomImage = './img/'+str(nomImage)
-        self.__posx = x
         imgPIL = Image.open(self.__nomImage)
         self.__hauteur = imgPIL.size[1]
         self.__largeur = imgPIL.size[0]
+        if joueur == 1 :
+            self.__posx = 0
+        elif joueur == 2 :
+            self.__posx = dimfen[0] - self.__largeur
+        else :
+            raise Exception('Numéro de joueur invalide !')
         self.__posy = dimfen[1]//2
+        self.__vitesse = vitesse
         return None
     
     def getPos(self) :
@@ -19,11 +24,11 @@ class Raquette:
         return self.__nomImage
     
     def monter(self) :
-        self.__posy -= 1
+        self.__posy -= self.__vitesse
         return None
     
     def descendre(self) :
-        self.__posy += 1
+        self.__posy += self.__vitesse
         return None
     
     def getHauteur(self):
